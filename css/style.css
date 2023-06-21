@@ -11,6 +11,10 @@
 	color: #bde360;
 }
 
+.bg-join {
+	background: #bde360;
+}
+
 .not-answer {
 	color: rgba(251,191,36,var(--tw-text-opacity));
 }
