@@ -6,3 +6,17 @@
 	margin: 0 calc(50% - 50vw);
 	width: 100vw;
 }
+
+.join {
+	color: #bde360;
+}
+
+.not-answer {
+	color: rgba(251,191,36,var(--tw-text-opacity));
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
