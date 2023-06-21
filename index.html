@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -15,271 +16,269 @@
 		<!-- script -->
 		<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/script-name.js"></script>
 	</head>
+
 	<body class="font-sans">
-		<div class="">
-			<header class="text-gray-600 layout-full-width z-10 fixed bg-white">
-				<div
-					class="container mx-auto flex flex-wrap justify-between md:flex-row items-center"
-				>
-					<a class="flex font-medium items-center text-gray-900">
-						<div class="w-32">
-							<img src="./img/posse-logo.png" alt="POSSE" />
-						</div>
-					</a>
-					<nav
-						class="md:ml-auto flex flex-wrap gap-4 items-center text-base justify-center"
-					>
-						<button
-							class="text-white bg-blue-400 px-4 py-2 rounded-3xl posse-blue-gradation"
-						>
-							管理画面へ
-						</button>
-						<button class="text-gray-400 px-4 py-2 rounded-3xl">
-							ログアウト
-						</button>
-					</nav>
-				</div>
-			</header>
-
-			<main
-				class="text-gray-700 layout-full-width bg-gray-100 pt-20 min-h-screen z-0 pb-10"
+        <!-- header -->
+		<header class="text-gray-600 layout-full-width z-10 fixed bg-white">
+			<div
+				class="container mx-auto flex flex-wrap justify-between md:flex-row items-center"
 			>
-				<section class="container mx-auto">
-					<span class="text-sm pl-2"
-						>ようこそ POSSE1: 2.5期生 遠藤愛期さん</span
+				<a class="flex font-medium items-center text-gray-900">
+					<div class="w-32">
+						<img src="./img/posse-logo.png" alt="POSSE" />
+					</div>
+				</a>
+				<nav
+					class="md:ml-auto flex flex-wrap gap-4 items-center text-base justify-center"
+				>
+					<button
+						class="text-white bg-blue-400 px-4 py-2 rounded-3xl posse-blue-gradation"
 					>
-					<div class="w-3/5 mx-auto">
-						<div class="mb-5 flex gap-3 mx-auto">
-							<button
-								data-ripple-light="true"
-								data-tooltip-target="tooltip-top"
-								class="middle none center rounded-lg bg-gradient-to-tr from-blue-800 to-blue-600 py-3 px-6 text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-							>
-								リアルイベント
-							</button>
-							<button
-								data-ripple-light="true"
-								data-tooltip-target="tooltip-top-start"
-								class="middle none center rounded-lg bg-white py-3 px-6 text-xs font-bold uppercase shadow-md transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-							>
-								必須イベント
-							</button>
-							<button
-								data-ripple-light="true"
-								data-tooltip-target="tooltip-top-end"
-								class="middle none center rounded-lg bg-white py-3 px-6 text-xs font-bold uppercase shadow-md transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-							>
-								所属情報登録
-							</button>
-						</div>
-						<div class="mb-5 flex gap-3 mx-auto">
-							<button
-								data-ripple-light="true"
-								data-tooltip-target="tooltip-top-end"
-								class="middle none center rounded-lg bg-white py-3 px-6 text-xs font-bold uppercase shadow-md transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-							>
-								全て
-							</button>
-							<button
-								data-ripple-light="true"
-								data-tooltip-target="tooltip-top-start"
-								class="middle none center rounded-lg bg-white py-3 px-6 text-xs font-bold uppercase shadow-md transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-							>
-								参加
-							</button>
-							<button
-								data-ripple-light="true"
-								data-tooltip-target="tooltip-top-end"
-								class="middle none center rounded-lg bg-white py-3 px-6 text-xs font-bold uppercase shadow-md transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-							>
-								不参加
-							</button>
-							<button
-								data-ripple-light="true"
-								data-tooltip-target="tooltip-top-end"
-								class="middle none center rounded-lg bg-white py-3 px-6 text-xs font-bold uppercase shadow-md transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-							>
-								提出済み
-							</button>
-							<button
-								data-ripple-light="true"
-								data-tooltip-target="tooltip-top"
-								class="middle none center rounded-lg bg-gradient-to-tr from-blue-800 to-blue-600 py-3 px-6 text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-							>
-								未回答
-							</button>
-						</div>
-					</div>
-					<div class="w-3/5 mx-auto">
-						<span class="text-sm font-bold mb-2">一覧</span>
-						<ul class="mb-5 flex gap-3 mx-auto flex-col">
-							<li
-								class="flex justify-between middle none center rounded-lg bg-white p-4 shadow-md"
-							>
-								<div>
-									<ul>
-										<li
-											class="text-lg flex-center gap-3 mb-4 font-bold"
-										>
-											<span>タワーtoタワー</span>
-											<div
-												class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-gradient-to-tr from-blue-800 to-blue-600 py-2 px-3.5 align-baseline text-xs font-bold uppercase leading-none text-white"
-											>
-												2期生
-											</div>
-										</li>
-										<li class="text-sm">
-											2023年06月30日(金)
-										</li>
-										<li
-											class="text-xs text-gray-600 font-light"
-										>
-											08:00~20:00
-										</li>
-									</ul>
-								</div>
-								<div class="">
-									<ul
-										class="flex flex-col justify-between h-full"
-									>
-										<li
-											class="join flex-center font-black gap-2"
-										>
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												viewBox="0 0 24 24"
-												fill="currentColor"
-												class="w-6 h-6"
-											>
-												<path
-													fill-rule="evenodd"
-													d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-													clip-rule="evenodd"
-												/>
-											</svg>
-											<span>参加</span>
-										</li>
-										<li class="flex-center">
-											<p>
-												10<span class="text-sm"
-													>人参加 >
-												</span>
-											</p>
-										</li>
-									</ul>
-								</div>
-							</li>
-							<li
-								class="flex justify-between middle none center rounded-lg bg-white p-4 shadow-md"
-							>
-								<div>
-									<ul>
-										<li
-											class="text-lg flex-center gap-3 mb-4 font-bold"
-										>
-											<span>山手線一周</span>
-											<div
-												class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-gradient-to-tr from-blue-800 to-blue-600 py-2 px-3.5 align-baseline text-xs font-bold uppercase leading-none text-white"
-											>
-												1期生
-											</div>
-											<div
-												class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-gradient-to-tr from-blue-800 to-blue-600 py-2 px-3.5 align-baseline text-xs font-bold uppercase leading-none text-white"
-											>
-												2期生
-											</div>
-										</li>
-										<li class="text-sm">
-											2023年07月15日(土)
-										</li>
-										<li
-											class="text-xs text-gray-600 font-light"
-										>
-											12:00~19:30
-										</li>
-									</ul>
-								</div>
-								<div class="">
-									<ul
-										class="flex flex-col justify-between h-full"
-									>
-										<li
-											class="not-answer flex-center font-black gap-2"
-										>
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												viewBox="0 0 24 24"
-												fill="currentColor"
-												class="w-6 h-6"
-											>
-												<path
-													fill-rule="evenodd"
-													d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 01-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 01-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 01-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584zM12 18a.75.75 0 100-1.5.75.75 0 000 1.5z"
-													clip-rule="evenodd"
-												/>
-											</svg>
-											<span>未回答</span>
-										</li>
-										<li class="flex-center">
-											<p>
-												5<span class="text-sm"
-													>人参加 >
-												</span>
-											</p>
-										</li>
-									</ul>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</section>
-			</main>
+						管理画面へ
+					</button>
+					<button class="text-gray-400 px-4 py-2 rounded-3xl">
+						ログアウト
+					</button>
+				</nav>
+			</div>
+		</header>
 
-			<footer class="w-full fixed bottom-0 z-10 text-center">
-				<ul class="container max-w-4xl flex-center mx-auto">
-					<li class="w-1/2">
+        <!-- main -->
+		<main
+			class="text-gray-700 layout-full-width bg-gray-100 pt-20 min-h-screen z-0 pb-10"
+		>
+			<section class="container mx-auto">
+				<span class="text-sm pl-2"
+					>ようこそ POSSE1: 2.5期生 遠藤愛期さん</span
+				>
+				<div class="w-3/5 mx-auto">
+					<div class="mb-5 flex gap-3 mx-auto">
 						<button
-							class="flex-center gap-2 h-16 w-full center relative select-none whitespace-nowrap bg-gradient-to-tr from-blue-800 to-blue-600 py-2 px-3.5 align-baseline font-bold uppercase leading-none text-white"
+							data-ripple-light="true"
+							data-tooltip-target="tooltip-top"
+							class="middle none center rounded-lg bg-gradient-to-tr from-blue-800 to-blue-600 py-3 px-6 text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
 						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 24 24"
-								fill="currentColor"
-								class="w-6 h-6"
-							>
-								<path
-									d="M12.75 12.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM7.5 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM8.25 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM9.75 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM10.5 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM12.75 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM14.25 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM15 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM16.5 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM15 12.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM16.5 13.5a.75.75 0 100-1.5.75.75 0 000 1.5z"
-								/>
-								<path
-									fill-rule="evenodd"
-									d="M6.75 2.25A.75.75 0 017.5 3v1.5h9V3A.75.75 0 0118 3v1.5h.75a3 3 0 013 3v11.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V7.5a3 3 0 013-3H6V3a.75.75 0 01.75-.75zm13.5 9a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5z"
-									clip-rule="evenodd"
-								/>
-							</svg>
-							参加予約(未回答)
+							リアルイベント
 						</button>
-					</li>
-					<li class="w-1/2">
 						<button
-							class="flex-center gap-2 h-16 w-full center relative select-none whitespace-nowrap bg-join py-2 px-3.5 align-baseline font-bold uppercase leading-none text-white"
+							data-ripple-light="true"
+							data-tooltip-target="tooltip-top-start"
+							class="middle none center rounded-lg bg-white py-3 px-6 text-xs font-bold uppercase shadow-md transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
 						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 24 24"
-								fill="currentColor"
-								class="w-6 h-6"
-							>
-								<path
-									fill-rule="evenodd"
-									d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-									clip-rule="evenodd"
-								/>
-							</svg>
-							今日の出欠
+							必須イベント
 						</button>
-					</li>
-				</ul>
-			</footer>
-		</div>
+						<button
+							data-ripple-light="true"
+							data-tooltip-target="tooltip-top-end"
+							class="middle none center rounded-lg bg-white py-3 px-6 text-xs font-bold uppercase shadow-md transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+						>
+							所属情報登録
+						</button>
+					</div>
+					<div class="mb-5 flex gap-3 mx-auto">
+						<button
+							data-ripple-light="true"
+							data-tooltip-target="tooltip-top-end"
+							class="middle none center rounded-lg bg-white py-3 px-6 text-xs font-bold uppercase shadow-md transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+						>
+							全て
+						</button>
+						<button
+							data-ripple-light="true"
+							data-tooltip-target="tooltip-top-start"
+							class="middle none center rounded-lg bg-white py-3 px-6 text-xs font-bold uppercase shadow-md transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+						>
+							参加
+						</button>
+						<button
+							data-ripple-light="true"
+							data-tooltip-target="tooltip-top-end"
+							class="middle none center rounded-lg bg-white py-3 px-6 text-xs font-bold uppercase shadow-md transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+						>
+							不参加
+						</button>
+						<button
+							data-ripple-light="true"
+							data-tooltip-target="tooltip-top-end"
+							class="middle none center rounded-lg bg-white py-3 px-6 text-xs font-bold uppercase shadow-md transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+						>
+							提出済み
+						</button>
+						<button
+							data-ripple-light="true"
+							data-tooltip-target="tooltip-top"
+							class="middle none center rounded-lg bg-gradient-to-tr from-blue-800 to-blue-600 py-3 px-6 text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+						>
+							未回答
+						</button>
+					</div>
+				</div>
+				<div class="w-3/5 mx-auto">
+					<span class="text-sm font-bold mb-2">一覧</span>
+					<ul class="mb-5 flex gap-3 mx-auto flex-col">
+						<li
+							class="flex justify-between middle none center rounded-lg bg-white p-4 shadow-md"
+						>
+							<div>
+								<ul>
+									<li
+										class="text-lg flex-center gap-3 mb-4 font-bold"
+									>
+										<span>タワーtoタワー</span>
+										<div
+											class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-gradient-to-tr from-blue-800 to-blue-600 py-2 px-3.5 align-baseline text-xs font-bold uppercase leading-none text-white"
+										>
+											2期生
+										</div>
+									</li>
+									<li class="text-sm">2023年06月30日(金)</li>
+									<li
+										class="text-xs text-gray-600 font-light"
+									>
+										08:00~20:00
+									</li>
+								</ul>
+							</div>
+							<div class="">
+								<ul
+									class="flex flex-col justify-between h-full"
+								>
+									<li
+										class="join flex-center font-black gap-2"
+									>
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 24 24"
+											fill="currentColor"
+											class="w-6 h-6"
+										>
+											<path
+												fill-rule="evenodd"
+												d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+												clip-rule="evenodd"
+											/>
+										</svg>
+										<span>参加</span>
+									</li>
+									<li class="flex-center">
+										<p>
+											10<span class="text-sm"
+												>人参加 >
+											</span>
+										</p>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li
+							class="flex justify-between middle none center rounded-lg bg-white p-4 shadow-md"
+						>
+							<div>
+								<ul>
+									<li
+										class="text-lg flex-center gap-3 mb-4 font-bold"
+									>
+										<span>山手線一周</span>
+										<div
+											class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-gradient-to-tr from-blue-800 to-blue-600 py-2 px-3.5 align-baseline text-xs font-bold uppercase leading-none text-white"
+										>
+											1期生
+										</div>
+										<div
+											class="center relative inline-block select-none whitespace-nowrap rounded-lg bg-gradient-to-tr from-blue-800 to-blue-600 py-2 px-3.5 align-baseline text-xs font-bold uppercase leading-none text-white"
+										>
+											2期生
+										</div>
+									</li>
+									<li class="text-sm">2023年07月15日(土)</li>
+									<li
+										class="text-xs text-gray-600 font-light"
+									>
+										12:00~19:30
+									</li>
+								</ul>
+							</div>
+							<div class="">
+								<ul
+									class="flex flex-col justify-between h-full"
+								>
+									<li
+										class="not-answer flex-center font-black gap-2"
+									>
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 24 24"
+											fill="currentColor"
+											class="w-6 h-6"
+										>
+											<path
+												fill-rule="evenodd"
+												d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 01-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 01-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 01-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584zM12 18a.75.75 0 100-1.5.75.75 0 000 1.5z"
+												clip-rule="evenodd"
+											/>
+										</svg>
+										<span>未回答</span>
+									</li>
+									<li class="flex-center">
+										<p>
+											5<span class="text-sm"
+												>人参加 >
+											</span>
+										</p>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+
+        <!-- footer -->
+		<footer class="w-full fixed bottom-0 z-10 text-center">
+			<ul class="container max-w-4xl flex-center mx-auto">
+				<li class="w-1/2">
+					<button
+						class="flex-center gap-2 h-16 w-full center relative select-none whitespace-nowrap bg-gradient-to-tr from-blue-800 to-blue-600 py-2 px-3.5 align-baseline font-bold uppercase leading-none text-white"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								d="M12.75 12.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM7.5 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM8.25 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM9.75 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM10.5 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM12.75 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM14.25 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM15 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM16.5 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM15 12.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM16.5 13.5a.75.75 0 100-1.5.75.75 0 000 1.5z"
+							/>
+							<path
+								fill-rule="evenodd"
+								d="M6.75 2.25A.75.75 0 017.5 3v1.5h9V3A.75.75 0 0118 3v1.5h.75a3 3 0 013 3v11.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V7.5a3 3 0 013-3H6V3a.75.75 0 01.75-.75zm13.5 9a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5z"
+								clip-rule="evenodd"
+							/>
+						</svg>
+						参加予約(未回答)
+					</button>
+				</li>
+				<li class="w-1/2">
+					<button
+						class="flex-center gap-2 h-16 w-full center relative select-none whitespace-nowrap bg-join py-2 px-3.5 align-baseline font-bold uppercase leading-none text-white"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+								clip-rule="evenodd"
+							/>
+						</svg>
+						今日の出欠
+					</button>
+				</li>
+			</ul>
+		</footer>
 	</body>
 </html>
