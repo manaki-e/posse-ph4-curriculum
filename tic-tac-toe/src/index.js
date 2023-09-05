@@ -2,26 +2,40 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-function Square(props) {
-	return (
-		<button className="square" onClick={props.onClick}>
-			{props.value}
-		</button>
-	);
+class Square extends React.Component {
+	render() {
+		const classNames = ["square"];
+		if (this.props.isWinner) {
+			classNames.push("winner");
+		}
+
+		return (
+			<button
+				className={classNames.join(" ")}
+				onClick={this.props.onClick}
+			>
+				{this.props.value}
+			</button>
+		);
+	}
 }
 
 class Board extends React.Component {
 	renderSquare(i) {
+		const winnerSquares = calculateWinner(this.props.squares);
+		const isWinner = winnerSquares && winnerSquares.includes(i);
 		return (
 			<Square
+				key={i}
 				value={this.props.squares[i]}
 				onClick={() => this.props.onClick(i)}
+				isWinner={isWinner}
 			/>
 		);
 	}
 
 	render() {
-		const boardSize = 3; // ボードのサイズを3x3に設定
+		const boardSize = 3;
 		const rows = [];
 		for (let i = 0; i < boardSize; i++) {
 			const row = [];
@@ -84,7 +98,6 @@ class Game extends React.Component {
 		const history = this.state.history;
 		const current = history[this.state.stepNumber];
 		const winner = calculateWinner(current.squares);
-
 		const moves = history.map((step, move) => {
 			const desc = move ? "Go to move #" + move : "Go to game start";
 			return (
@@ -96,7 +109,9 @@ class Game extends React.Component {
 
 		let status;
 		if (winner) {
-			status = "Winner: " + winner;
+			status = "Winner: " + current.squares[winner[0]]; // 勝者の記号を取得
+		} else if (this.state.stepNumber === 9) {
+			status = "It's a draw!"; // 引き分けの場合のメッセージ
 		} else {
 			status = "Next player: " + (this.state.xIsNext ? "X" : "O");
 		}
@@ -118,11 +133,10 @@ class Game extends React.Component {
 	}
 }
 
-// ========================================
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<Game />);
 
+// calculateWinner 関数を修正して、勝者のマスのインデックスを返すように変更
 function calculateWinner(squares) {
 	const lines = [
 		[0, 1, 2],
@@ -141,7 +155,7 @@ function calculateWinner(squares) {
 			squares[a] === squares[b] &&
 			squares[a] === squares[c]
 		) {
-			return squares[a];
+			return [a, b, c]; // 勝者のマスのインデックスを返す
 		}
 	}
 	return null;
