@@ -1,5 +1,9 @@
 name: PHPUnitの実行
-on: [push]
+on:
+    push:
+        branches: [main, develop]
+    pull_request:
+        branches: [main, develop]
 jobs:
     phpunit:
         runs-on: ubuntu-latest
@@ -18,3 +22,5 @@ jobs:
                   cp src/.env.example src/.env
                   docker-compose exec -T app composer install
                   docker-compose exec -T app php artisan key:generate
+                  docker-compose exec -T app php artisan migrate:fresh --seed
+                  docker-compose exec -T app vendor/bin/phpunit
