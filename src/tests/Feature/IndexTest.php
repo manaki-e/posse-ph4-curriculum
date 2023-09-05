@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\BigQuestion;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -15,9 +16,10 @@ class IndexTest extends TestCase
      */
     public function testExample()
     {
+        $big_question = factory(BigQuestion::class)->create();
         $response = $this->get('/');
 
         $response->assertStatus(200);
-        $response->assertSee("東京の難読地名クイズ");
+        $response->assertSee($big_question->name);
     }
 }
