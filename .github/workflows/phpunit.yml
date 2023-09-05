@@ -8,5 +8,13 @@ jobs:
               with:
                   fetch-depth: 0
 
-            - name: ハローワールド
-              run: echo "Hello world"
+            - name: "環境の起動とテスト"
+              run: |
+                  docker-compose up -d
+                  while ! docker-compose exec -T db mysqladmin ping --host=127.0.0.1 --user=laravel --password=password --silent; do
+                    echo "mysqlの起動を待っています"
+                    sleep 1
+                  done
+                  cp src/.env.example src/.env
+                  docker-compose exec -T app composer install
+                  docker-compose exec -T app php artisan key:generate
