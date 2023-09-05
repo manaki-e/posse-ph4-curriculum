@@ -10,7 +10,7 @@ function setup() {
 	let min_number = 2;
 	let max_number = 5;
 	let number =
-	Math.floor(Math.random() * (max_number - min_number + 1)) + min_number;
+		Math.floor(Math.random() * (max_number - min_number + 1)) + min_number;
 
 	// ボールを生成してballs変数に詰める
 	for (let i = 0; i < number; i++) {
@@ -97,6 +97,9 @@ let blocks = [];
 let paddle = new Paddle(new Vec2(200, 320), 30);
 
 function draw() {
+	// ブロックの数をカウント
+	let blockCount = blocks.length;
+
 	for (let ball of balls) {
 		// ボールを移動させる
 		ball.p = ball.p.add(ball.v.mul(1 / 60));
@@ -119,6 +122,8 @@ function draw() {
 				ball.v = r;
 				// ブロックを消す
 				blocks.splice(blocks.indexOf(block), 1);
+				// ブロックの数を減らす
+				blockCount--;
 			}
 		}
 
@@ -148,4 +153,11 @@ function draw() {
 	}
 	// パドルを描画
 	circle(paddle.p.x, paddle.p.y, 2 * paddle.r);
+	// ブロックの数が0になったらゲームオーバー
+	if (blockCount === 0) {
+		fill(255, 0, 0); // 赤いテキスト
+		textSize(32);
+		textAlign(CENTER, CENTER);
+		text("Game Over", width / 2, height / 2);
+	}
 }
