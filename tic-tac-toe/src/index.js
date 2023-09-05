@@ -21,25 +21,22 @@ class Board extends React.Component {
 	}
 
 	render() {
-		return (
-			<div>
-				<div className="board-row">
-					{this.renderSquare(0)}
-					{this.renderSquare(1)}
-					{this.renderSquare(2)}
+		const boardSize = 3; // ボードのサイズを3x3に設定
+		const rows = [];
+		for (let i = 0; i < boardSize; i++) {
+			const row = [];
+			for (let j = 0; j < boardSize; j++) {
+				const index = i * boardSize + j;
+				row.push(this.renderSquare(index));
+			}
+			rows.push(
+				<div className="board-row" key={i}>
+					{row}
 				</div>
-				<div className="board-row">
-					{this.renderSquare(3)}
-					{this.renderSquare(4)}
-					{this.renderSquare(5)}
-				</div>
-				<div className="board-row">
-					{this.renderSquare(6)}
-					{this.renderSquare(7)}
-					{this.renderSquare(8)}
-				</div>
-			</div>
-		);
+			);
+		}
+
+		return <div>{rows}</div>;
 	}
 }
 
