@@ -1,0 +1,12 @@
+name: PHPUnitの実行
+on: [push]
+jobs:
+    phpunit:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
+
+            - name: ハローワールド
+              run: echo "Hello world"
