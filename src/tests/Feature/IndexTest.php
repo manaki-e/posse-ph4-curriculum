@@ -3,12 +3,15 @@
 namespace Tests\Feature;
 
 use App\BigQuestion;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class IndexTest extends TestCase
 {
+    use DatabaseTransactions;
+
     /**
      * A basic feature test example.
      *
