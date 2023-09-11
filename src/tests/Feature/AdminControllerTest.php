@@ -75,4 +75,10 @@ class AdminControllerTest extends TestCase
             'valid',
         ]);
     }
+
+    public function test_add()
+    {
+        $response = $this->get('/admin/big_question/add');
+        $response->assertSeeText('大問追加');
+    }
 }
