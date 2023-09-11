@@ -1,0 +1,26 @@
+name: PHPUnitの実行
+on:
+    push:
+        branches: [main, develop]
+    pull_request:
+        branches: [main, develop]
+jobs:
+    phpunit:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
+
+            - name: "環境の起動とテスト"
+              run: |
+                  docker-compose up -d
+                  while ! docker-compose exec -T db mysqladmin ping --host=127.0.0.1 --user=laravel --password=password --silent; do
+                    echo "mysqlの起動を待っています"
+                    sleep 1
+                  done
+                  cp src/.env.example src/.env
+                  docker-compose exec -T app composer install
+                  docker-compose exec -T app php artisan key:generate
+                  docker-compose exec -T app php artisan migrate:fresh --seed
+                  docker-compose exec -T app vendor/bin/phpunit

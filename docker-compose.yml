@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  db:
+    image: mysql:8.0
+    volumes:
+      - ./infra/docker/mysql/data:/var/lib/mysql
+      - ./infra/docker/mysql/my.conf:/etc/mysql/conf.d/my.conf
+    environment:
+      - MYSQL_DATABASE=laravel
+      - MYSQL_USER=laravel
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=password
+    platform: linux/x86_64
+  app:
+    build:
+      context: ./infra/docker/php
+    volumes:
+      - ./src:/work/backend
+    environment:
+      - DB_CONNECTION=mysql
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=laravel
+      - DB_USERNAME=laravel
+      - DB_PASSWORD=password
+    depends_on: ["db"]
+  web:
+    build:
+      context: ./infra/docker/nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./src:/work/backend
+    depends_on: ["app"]
